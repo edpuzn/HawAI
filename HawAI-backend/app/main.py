@@ -8,6 +8,7 @@ from app.core.rate_limit import RateLimitMiddleware
 from app.middlewares.request_id import RequestIDMiddleware
 from app.api.routers.health import router as health_router
 from app.api.routers.chat import router as chat_router
+from app.services.competition import router as competition_router
 
 
 configure_logging()
@@ -33,3 +34,4 @@ app.add_middleware(RateLimitMiddleware, limit_per_minute=settings.rate_limit_per
 # Routers
 app.include_router(health_router)
 app.include_router(chat_router)
+app.include_router(competition_router)

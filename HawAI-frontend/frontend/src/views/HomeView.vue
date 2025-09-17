@@ -7,6 +7,7 @@
       <MessageBubble v-for="(m, idx) in messages" :key="idx" :text="m.text" :from="m.from" :tags="m.tags" :sources="m.sources" />
     </div>
     <ChatBox @send="onSend" />
+    <CompetitionTable class="mt-4" />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import { onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
 import ChatBox from '../components/ChatBox.vue'
 import MessageBubble from '../components/MessageBubble.vue'
+import CompetitionTable from '../components/CompetitionTable.vue'
 
 const store = useStore()
 const messages = computed(() => store.state.messages)
@@ -27,3 +29,4 @@ onMounted(() => {
   store.dispatch('fetchHealth')
 })
 </script>
+

@@ -11,6 +11,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item"><router-link class="nav-link" to="/">Home</router-link></li>
             <li class="nav-item"><router-link class="nav-link" to="/about">About</router-link></li>
+            <li class="nav-item"><router-link class="nav-link" to="/competition">Competition</router-link></li>
           </ul>
           <div class="d-flex align-items-center">
             <span v-if="health === true" class="badge bg-success">Online</span>

@@ -30,6 +30,8 @@ services:
     container_name: dify-api
     env_file:
       - ./dify/docker/.env
+    environment:
+      - PORT=5001
     depends_on:
       - dify-web
       - dify-db
@@ -44,6 +46,10 @@ services:
     container_name: dify-web
     env_file:
       - ./dify/docker/.env
+    environment:
+      - PORT=3000
+      - CONSOLE_API_URL=http://localhost:5001
+      - NEXT_PUBLIC_CONSOLE_API_URL=http://localhost:5001
     ports:
       - "3000:3000"
     networks:

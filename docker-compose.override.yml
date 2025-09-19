@@ -1,0 +1,78 @@
+version: "3.9"
+
+services:
+  hawai-backend:
+    build: ./HawAI-backend
+    container_name: hawai-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./HawAI-backend/.env
+    depends_on:
+      - ollama
+      - dify-api
+    networks:
+      - hawai-net
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: hawai-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    networks:
+      - hawai-net
+
+  dify-api:
+    build: ./dify/api
+    container_name: dify-api
+    env_file:
+      - ./dify/docker/.env
+    depends_on:
+      - dify-web
+      - dify-db
+      - dify-redis
+    ports:
+      - "5001:5001"
+    networks:
+      - hawai-net
+
+  dify-web:
+    build: ./dify/web
+    container_name: dify-web
+    env_file:
+      - ./dify/docker/.env
+    ports:
+      - "3000:3000"
+    networks:
+      - hawai-net
+
+  dify-db:
+    image: postgres:15
+    container_name: dify-db
+    environment:
+      POSTGRES_USER: dify
+      POSTGRES_PASSWORD: dify
+      POSTGRES_DB: dify
+    volumes:
+      - dify_db:/var/lib/postgresql/data
+    networks:
+      - hawai-net
+
+  dify-redis:
+    image: redis:6
+    container_name: dify-redis
+    networks:
+      - hawai-net
+
+volumes:
+  ollama_models:
+  dify_db:
+
+networks:
+  hawai-net:
+    driver: bridge
+
+

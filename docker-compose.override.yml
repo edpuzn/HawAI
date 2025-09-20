@@ -26,23 +26,31 @@ services:
       - hawai-net
 
   dify-api:
-    build: ./dify/api
+    image: langgenius/dify-api:latest
     container_name: dify-api
     env_file:
       - ./dify/docker/.env
     environment:
       - PORT=5001
+      - ENABLE_PLUGIN_MARKETPLACE=true
     depends_on:
       - dify-web
       - dify-db
       - dify-redis
+      - dify-worker
+      - dify-plugin-daemon
     ports:
       - "5001:5001"
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:5001/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 30
     networks:
       - hawai-net
 
   dify-web:
-    build: ./dify/web
+    image: langgenius/dify-web:latest
     container_name: dify-web
     env_file:
       - ./dify/docker/.env
@@ -50,6 +58,7 @@ services:
       - PORT=3000
       - CONSOLE_API_URL=http://localhost:5001
       - NEXT_PUBLIC_CONSOLE_API_URL=http://localhost:5001
+      - NEXT_PUBLIC_ENABLE_PLUGIN=true
     ports:
       - "3000:3000"
     networks:
@@ -72,6 +81,34 @@ services:
     container_name: dify-redis
     networks:
       - hawai-net
+
+  dify-plugin-daemon:
+    image: langgenius/dify-plugin-daemon:latest
+    container_name: dify-plugin-daemon
+    env_file:
+      - ./dify/docker/.env
+    depends_on:
+      - dify-api
+      - dify-redis
+    ports:
+      - "5097:5097"
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:5097/health" ]
+      interval: 20s
+      timeout: 5s
+      retries: 30
+
+  dify-worker:
+    image: langgenius/dify-worker:latest
+    container_name: dify-worker
+    env_file:
+      - ./dify/docker/.env
+    depends_on:
+      - dify-api
+      - dify-redis
+      - dify-db
+
+  
 
 volumes:
   ollama_models:

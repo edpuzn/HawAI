@@ -1,3 +1,22 @@
+### Dify (lokal) + Plugin’ler
+
+- .env hazır: `dify/docker/.env` (ENABLE_PLUGINS=true)
+- Çalıştırma (proje kökü):
+
+```bash
+docker compose -f docker-compose.override.yml up -d
+# durum
+docker compose -f docker-compose.override.yml ps
+```
+
+- Servisler:
+  - dify-web: http://localhost:3000
+  - dify-api: http://localhost:5001
+  - dify-plugin-daemon: 5097 (opsiyonel debug)
+  - dify-worker, dify-db, dify-redis
+
+- Not: Bu kurulum sadece lokal geliştirme içindir; bulut/üretim ayarı eklemeyin.
+
 ## Docker Compose Integration
 
 Tek komutla Dify + Backend + Ollama’yı ayağa kaldırmak için kökteki `docker-compose.override.yml` dosyasını kullanın.

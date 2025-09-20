@@ -1,0 +1,87 @@
+version: "3.9"
+
+services:
+  dify-db:
+    image: postgres:15
+    container_name: dify-db
+    environment:
+      POSTGRES_USER: dify
+      POSTGRES_PASSWORD: dify
+      POSTGRES_DB: dify
+    volumes:
+      - dify_db:/var/lib/postgresql/data
+    networks:
+      - hawai-net
+
+  dify-redis:
+    image: redis:6
+    container_name: dify-redis
+    networks:
+      - hawai-net
+
+  dify-api:
+    image: langgenius/dify-api:latest
+    container_name: dify-api
+    env_file:
+      - ./.env
+    depends_on:
+      - dify-db
+      - dify-redis
+    ports:
+      - "5001:5001"
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:5001/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 30
+    networks:
+      - hawai-net
+
+  dify-web:
+    image: langgenius/dify-web:latest
+    container_name: dify-web
+    env_file:
+      - ./.env
+    depends_on:
+      - dify-api
+    ports:
+      - "3000:3000"
+    networks:
+      - hawai-net
+
+  dify-worker:
+    image: langgenius/dify-worker:latest
+    container_name: dify-worker
+    env_file:
+      - ./.env
+    depends_on:
+      - dify-db
+      - dify-redis
+    networks:
+      - hawai-net
+
+  dify-plugin-daemon:
+    image: langgenius/dify-plugin-daemon:latest
+    container_name: dify-plugin-daemon
+    env_file:
+      - ./.env
+    depends_on:
+      - dify-redis
+    ports:
+      - "5097:5097"
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:5097/health" ]
+      interval: 20s
+      timeout: 5s
+      retries: 30
+    networks:
+      - hawai-net
+
+volumes:
+  dify_db:
+
+networks:
+  hawai-net:
+    external: true
+
+

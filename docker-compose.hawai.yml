@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  hawai-backend:
+    build: ./HawAI-backend
+    container_name: hawai-backend
+    env_file:
+      - ./HawAI-backend/.env
+    depends_on:
+      - ollama
+    ports:
+      - "8000:8000"
+    networks:
+      - hawai-net
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: hawai-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    networks:
+      - hawai-net
+
+volumes:
+  ollama_models:
+
+networks:
+  hawai-net:
+    driver: bridge
+
+

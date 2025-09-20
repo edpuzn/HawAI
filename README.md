@@ -1,12 +1,11 @@
 ### Dify (lokal) + Plugin’ler
 
 - .env hazır: `dify/docker/.env` (ENABLE_PLUGINS=true)
-- Çalıştırma (proje kökü):
+- Çalıştırma (dify stack):
 
 ```bash
-docker compose -f docker-compose.override.yml up -d
-# durum
-docker compose -f docker-compose.override.yml ps
+cd dify/docker
+docker compose up -d
 ```
 
 - Servisler:
@@ -16,6 +15,24 @@ docker compose -f docker-compose.override.yml ps
   - dify-worker, dify-db, dify-redis
 
 - Not: Bu kurulum sadece lokal geliştirme içindir; bulut/üretim ayarı eklemeyin.
+
+### HawAI + Ollama (ayrı compose)
+```bash
+docker compose -f docker-compose.hawai.yml up -d
+```
+
+### Health & UI
+```bash
+curl http://localhost:5001/health
+```
+
+- UI: http://localhost:3000
+
+### depends_on notları (döngü önleme)
+- web -> api (tek yön)
+- api -> db, redis
+- worker -> db, redis
+- plugin-daemon -> redis
 
 ## Docker Compose Integration
 

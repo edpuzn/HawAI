@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Request
 from app.schemas.chat import ChatIn, ChatOut, Source, Safety
 from app.services.ollama_client import OllamaClient
 from app.services.sdg_classifier import classify_sdg_tags
-from app.services.postprocess import apply_emergency_if_needed, build_sources
+from app.services.postprocess import apply_emergency_if_needed, build_sources, override_identity_if_needed
 from app.core.rate_limit import limiter
 from app.core.config import settings
 
@@ -14,11 +14,18 @@ router = APIRouter()
 async def chat(request: Request, body: ChatIn) -> ChatOut:
     async with OllamaClient() as client:
         try:
-            reply_text = await client.generate(body.message, body.user_meta)
+            reply_text = await client.generate(
+                body.message,
+                body.user_meta,
+                image_url=body.image_url,
+                image_base64=body.image_base64,
+            )
         except Exception as e:  # pragma: no cover
-            raise HTTPException(status_code=502, detail=f"Ollama upstream error: {e}")
+            # LLaVA often fails when image payload invalid or too large
+            raise HTTPException(status_code=502, detail=f"Ollama upstream error: {str(e)[:200]}")
 
     tagged = classify_sdg_tags(body.message + "\n" + reply_text)
+    reply_text = override_identity_if_needed(body.message, reply_text)
     reply_text, is_emergency = apply_emergency_if_needed(body.message, reply_text)
     sources = [Source(**s) for s in build_sources()]
 

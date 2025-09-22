@@ -1,0 +1,170 @@
+/* src/styles/theme.css */
+:root {
+  /* Brand */
+  --brand-50: #f0fdf4;
+  --brand-100: #dcfce7;
+  --brand-200: #bbf7d0;
+  --brand-300: #86efac;
+  --brand-400: #4ade80;
+  --brand-500: #22c55e; /* primary */
+  --brand-600: #16a34a;
+  --brand-700: #15803d;
+  --brand-800: #166534;
+
+  /* Surface & text (light) */
+  --bg: #f8fafc; /* page */
+  --surface: #ffffff; /* cards */
+  --text-900: #0f172a; /* main text */
+  --text-600: #475569; /* secondary */
+  --border: rgba(2, 6, 23, 0.08);
+  --ring: rgba(34, 197, 94, 0.35);
+
+  /* Navbar background (light) */
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+
+  /* Utility */
+  --radius-xl: 20px;
+  --radius-lg: 14px;
+  --shadow-md: 0 10px 30px rgba(2, 6, 23, 0.06);
+  --shadow-lg: 0 20px 60px rgba(2, 6, 23, 0.08);
+}
+
+/* DARK THEME VARIABLES */
+:root[data-theme="dark"] {
+  --bg: #0b1220;
+  --surface: #0f172a;
+  --text-900: #e5e7eb;
+  --text-600: #94a3b8;
+  --border: rgba(255, 255, 255, 0.12);
+  --ring: rgba(34, 197, 94, 0.35);
+  --navbar-bg: rgba(15, 23, 42, 0.7);
+}
+
+/* Respect system preference unless user overrides with data-theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1220;
+    --surface: #0f172a;
+    --text-900: #e5e7eb;
+    --text-600: #94a3b8;
+    --border: rgba(255, 255, 255, 0.12);
+    --ring: rgba(34, 197, 94, 0.35);
+    --navbar-bg: rgba(15, 23, 42, 0.7);
+  }
+}
+
+/* Reset-ish */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#app {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text-900);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--brand-600);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 6px 18px var(--ring);
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  background: var(--brand-700);
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--text-900);
+  background: var(--surface);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.btn-ghost:hover {
+  background: var(--brand-50);
+  transform: translateY(-1px);
+}
+
+/* Simple float animation for hero shapes */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+/* ==== Chat balonu & input renk token'ları ==== */
+:root {
+  /* Light */
+  --bubble-ai-bg: var(--brand-50);
+  --bubble-ai-border: var(--brand-100);
+  --bubble-user-bg: #f8fafc;
+  --bubble-user-border: var(--border);
+
+  --input-bg: var(--surface);
+  --input-border: var(--border);
+  --input-placeholder: #9aa4b2;
+}
+
+/* Koyu tema: açık zemin yerine koyu tonlu balonlar */
+:root[data-theme="dark"] {
+  --bubble-ai-bg: rgba(34, 197, 94, 0.1);
+  --bubble-ai-border: rgba(34, 197, 94, 0.3);
+  --bubble-user-bg: rgba(255, 255, 255, 0.04);
+  --bubble-user-border: rgba(255, 255, 255, 0.08);
+
+  --input-bg: var(--surface);
+  --input-border: var(--border);
+  --input-placeholder: #9fb0c6;
+}
+
+/* Sistem dark ise ve kullanıcı override etmediyse */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bubble-ai-bg: rgba(34, 197, 94, 0.1);
+    --bubble-ai-border: rgba(34, 197, 94, 0.3);
+    --bubble-user-bg: rgba(255, 255, 255, 0.04);
+    --bubble-user-border: rgba(255, 255, 255, 0.08);
+
+    --input-bg: var(--surface);
+    --input-border: var(--border);
+    --input-placeholder: #9fb0c6;
+  }
+}
+
+/* Bootstrap'in .text-secondary'sini tema değişkenine eşle */
+.text-secondary {
+  color: var(--text-600) !important;
+}

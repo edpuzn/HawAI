@@ -12,3 +12,969 @@
 2:37:37 PM [vite] hmr update /src/views/HomeView.vue
 2:37:55 PM [vite] page reload src/store/index.ts
 2:39:09 PM [vite] hmr update /src/views/HomeView.vue
+5:09:32 PM [vite] vite.config.ts changed, restarting server...
+✘ [ERROR] Expected end of file in JSON but found "{"
+
+    package.json:23:0:
+      23 │ {
+         ╵ ^
+
+✘ [ERROR] Multiple exports with the same name "default"
+
+    vite.config.ts:16:7:
+      16 │ export default defineConfig({
+         ╵        ~~~~~~~
+
+  The name "default" was originally exported here:
+
+    vite.config.ts:4:7:
+      4 │ export default defineConfig({
+        ╵        ~~~~~~~
+
+failed to load config from /Users/edpuzn/Desktop/HawAI/frontend/vite.config.ts
+5:09:33 PM [vite] Build failed with 2 errors:
+package.json:23:0: ERROR: Expected end of file in JSON but found "{"
+vite.config.ts:16:7: ERROR: Multiple exports with the same name "default"
+5:09:33 PM [vite] server restart failed
+5:09:50 PM [vite] page reload src/main.ts
+5:09:51 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:09:51 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7
+  
+  The symbol "router" has already been declared
+  19 |  import { createApp } from "vue";
+  20 |  import App from "./App.vue";
+  21 |  import router from "./router";
+     |         ^
+  22 |  import store from "./store";
+  23 |  import "bootstrap/dist/css/bootstrap.min.css";
+  
+      at failureErrorWithLog (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+5:10:07 PM [vite] hmr update /src/App.vue
+5:10:07 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:10:07 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7
+  
+  The symbol "router" has already been declared
+  19 |  import { createApp } from "vue";
+  20 |  import App from "./App.vue";
+  21 |  import router from "./router";
+     |         ^
+  22 |  import store from "./store";
+  23 |  import "bootstrap/dist/css/bootstrap.min.css";
+  
+      at failureErrorWithLog (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+5:13:24 PM [vite] vite.config.ts changed, restarting server...
+5:13:24 PM [vite] page reload src/main.ts
+✘ [ERROR] Expected end of file in JSON but found "{"
+
+    package.json:23:0:
+      23 │ {
+         ╵ ^
+
+✘ [ERROR] Multiple exports with the same name "default"
+
+    vite.config.ts:16:7:
+      16 │ export default defineConfig({
+         ╵        ~~~~~~~
+
+  The name "default" was originally exported here:
+
+    vite.config.ts:4:7:
+      4 │ export default defineConfig({
+        ╵        ~~~~~~~
+
+failed to load config from /Users/edpuzn/Desktop/HawAI/frontend/vite.config.ts
+5:13:24 PM [vite] Build failed with 2 errors:
+package.json:23:0: ERROR: Expected end of file in JSON but found "{"
+vite.config.ts:16:7: ERROR: Multiple exports with the same name "default"
+5:13:24 PM [vite] server restart failed
+5:13:25 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:13:25 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7
+  
+  The symbol "router" has already been declared
+  19 |  import { createApp } from "vue";
+  20 |  import App from "./App.vue";
+  21 |  import router from "./router";
+     |         ^
+  22 |  import store from "./store";
+  23 |  import "bootstrap/dist/css/bootstrap.min.css";
+  
+      at failureErrorWithLog (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+5:18:54 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:18:54 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7
+  
+  The symbol "router" has already been declared
+  19 |  import { createApp } from "vue";
+  20 |  import App from "./App.vue";
+  21 |  import router from "./router";
+     |         ^
+  22 |  import store from "./store";
+  23 |  import "bootstrap/dist/css/bootstrap.min.css";
+  
+      at failureErrorWithLog (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+5:18:56 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:18:57 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:18:58 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7
+  
+  The symbol "router" has already been declared
+  19 |  import { createApp } from "vue";
+  20 |  import App from "./App.vue";
+  21 |  import router from "./router";
+     |         ^
+  22 |  import store from "./store";
+  23 |  import "bootstrap/dist/css/bootstrap.min.css";
+  
+      at failureErrorWithLog (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+5:18:58 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:19:33 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:19:33 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:19:33 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7
+  
+  The symbol "router" has already been declared
+  19 |  import { createApp } from "vue";
+  20 |  import App from "./App.vue";
+  21 |  import router from "./router";
+     |         ^
+  22 |  import store from "./store";
+  23 |  import "bootstrap/dist/css/bootstrap.min.css";
+  
+      at failureErrorWithLog (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+5:19:34 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:19:34 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7
+  
+  The symbol "router" has already been declared
+  19 |  import { createApp } from "vue";
+  20 |  import App from "./App.vue";
+  21 |  import router from "./router";
+     |         ^
+  22 |  import store from "./store";
+  23 |  import "bootstrap/dist/css/bootstrap.min.css";
+  
+      at failureErrorWithLog (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+5:19:34 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:19:34 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:19:34 PM [vite] Internal server error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+  Plugin: vite:esbuild
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7
+  
+  The symbol "router" has already been declared
+  19 |  import { createApp } from "vue";
+  20 |  import App from "./App.vue";
+  21 |  import router from "./router";
+     |         ^
+  22 |  import store from "./store";
+  23 |  import "bootstrap/dist/css/bootstrap.min.css";
+  
+      at failureErrorWithLog (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+5:19:34 PM [vite] Pre-transform error: Transform failed with 1 error:
+/Users/edpuzn/Desktop/HawAI/frontend/src/main.ts:21:7: ERROR: The symbol "router" has already been declared
+5:20:06 PM [vite] page reload src/main.ts
+5:20:07 PM [vite] Pre-transform error: Single file component can contain only one <template> element
+5:20:07 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:20:07 PM [vite] Pre-transform error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+5:20:07 PM [vite] Pre-transform error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+5:20:07 PM [vite] Internal server error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/utils/axios.ts:1:18
+  1  |  import Axios from "axios";
+     |                     ^
+  2  |  const axios = Axios.create({
+  3  |    baseURL: import.meta.env.VITE_API_BASE || "http://localhost:8000",
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+5:20:07 PM [vite] Pre-transform error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+5:20:21 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:20:21 PM [vite] Internal server error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/utils/axios.ts:1:18
+  1  |  import Axios from "axios";
+     |                     ^
+  2  |  const axios = Axios.create({
+  3  |    baseURL: import.meta.env.VITE_API_BASE || "http://localhost:8000",
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:20:21 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:20:21 PM [vite] Internal server error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/utils/axios.ts:1:18
+  1  |  import Axios from "axios";
+     |                     ^
+  2  |  const axios = Axios.create({
+  3  |    baseURL: import.meta.env.VITE_API_BASE || "http://localhost:8000",
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:20:22 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:20:22 PM [vite] Internal server error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/utils/axios.ts:1:18
+  1  |  import Axios from "axios";
+     |                     ^
+  2  |  const axios = Axios.create({
+  3  |    baseURL: import.meta.env.VITE_API_BASE || "http://localhost:8000",
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:20:22 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:20:22 PM [vite] Internal server error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/utils/axios.ts:1:18
+  1  |  import Axios from "axios";
+     |                     ^
+  2  |  const axios = Axios.create({
+  3  |    baseURL: import.meta.env.VITE_API_BASE || "http://localhost:8000",
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:20:23 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:20:23 PM [vite] Internal server error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/utils/axios.ts:1:18
+  1  |  import Axios from "axios";
+     |                     ^
+  2  |  const axios = Axios.create({
+  3  |    baseURL: import.meta.env.VITE_API_BASE || "http://localhost:8000",
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:20:23 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:20:23 PM [vite] Internal server error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/utils/axios.ts:1:18
+  1  |  import Axios from "axios";
+     |                     ^
+  2  |  const axios = Axios.create({
+  3  |    baseURL: import.meta.env.VITE_API_BASE || "http://localhost:8000",
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:20:23 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:20:23 PM [vite] Internal server error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/utils/axios.ts:1:18
+  1  |  import Axios from "axios";
+     |                     ^
+  2  |  const axios = Axios.create({
+  3  |    baseURL: import.meta.env.VITE_API_BASE || "http://localhost:8000",
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:20:34 PM [vite] page reload src/main.ts
+5:20:35 PM [vite] Pre-transform error: Single file component can contain only one <template> element
+5:20:35 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:20:35 PM [vite] Internal server error: Failed to resolve import "axios" from "src/utils/axios.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/utils/axios.ts:1:18
+  1  |  import Axios from "axios";
+     |                     ^
+  2  |  const axios = Axios.create({
+  3  |    baseURL: import.meta.env.VITE_API_BASE || "http://localhost:8000",
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 0)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:21:17 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:21:17 PM [vite] error while updating dependencies:
+Error: ENOENT: no such file or directory, open '/Users/edpuzn/Desktop/HawAI/frontend/node_modules/bootstrap/dist/js/bootstrap.esm.js'
+    at async open (node:internal/fs/promises:639:25)
+    at async Object.readFile (node:internal/fs/promises:1243:14)
+    at async extractExportsData (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51156:24)
+    at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:50904:27
+    at async Promise.all (index 0)
+    at async prepareEsbuildOptimizerRun (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:50901:3)
+5:21:20 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:21:53 PM [vite] page reload src/main.ts
+5:21:54 PM [vite] Pre-transform error: Single file component can contain only one <template> element
+5:21:54 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:21:57 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:21:58 PM [vite] Internal server error: Single file component can contain only one <template> element
+  Plugin: vite:vue
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue
+      at createDuplicateBlockError (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1931:15)
+      at /Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1837:23
+      at Array.forEach (<anonymous>)
+      at Object.parse$1 [as parse] (/Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:1809:16)
+      at createDescriptor (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:71:43)
+      at handleHotUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/@vitejs/plugin-vue/dist/index.mjs:2198:26)
+      at async handleHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63717:31)
+      at async onHMRUpdate (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63270:9)
+      at async FSWatcher.<anonymous> (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:63302:5)
+5:23:24 PM [vite] hmr update /src/App.vue?vue&type=style&index=0&scoped=7a7a37b1&lang.css, /src/App.vue
+5:23:53 PM [vite] vite.config.ts changed, restarting server...
+Re-optimizing dependencies because lockfile has changed
+5:23:53 PM [vite] server restarted.
+Error: The following dependencies are imported but could not be resolved:
+
+  vuex (imported by /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue?id=0)
+
+Are they installed?
+    at file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:50669:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:50174:26
+5:24:23 PM [vite] Pre-transform error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+5:24:24 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:24:25 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:24:26 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:24:26 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:24:26 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:24:27 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:24:29 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:24:30 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:26:14 PM [vite] page reload vite.config.ts.timestamp-1758551174879-346d72b47ab56.mjs
+5:26:15 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+5:26:15 PM [vite] Pre-transform error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+5:26:19 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:26:19 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:26:20 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:26:20 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:26:20 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:26:23 PM [vite] vite.config.ts changed, restarting server...
+5:26:23 PM [vite] server restarted.
+Error: The following dependencies are imported but could not be resolved:
+
+  vuex (imported by /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue?id=0)
+
+Are they installed?
+    at file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:50669:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:50174:26
+5:26:29 PM [vite] Pre-transform error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+5:26:29 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:26:30 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:26:30 PM [vite] Internal server error: Failed to resolve import "vuex" from "src/App.vue". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/edpuzn/Desktop/HawAI/frontend/src/App.vue:155:25
+  1  |  import { defineComponent as _defineComponent } from "vue";
+  2  |  import { ref, watch, computed, onMounted, onUnmounted } from "vue";
+  3  |  import { useStore } from "vuex";
+     |                            ^
+  4  |  import { useRoute } from "vue-router";
+  5  |  const _sfc_main = /* @__PURE__ */ _defineComponent({
+      at TransformPluginContext._formatError (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49258:41)
+      at TransformPluginContext.error (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49253:16)
+      at normalizeUrl (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64306:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64438:39
+      at async Promise.all (index 2)
+      at async TransformPluginContext.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:64365:7)
+      at async PluginContainer.transform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:49099:18)
+      at async loadAndTransform (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:51977:27)
+      at async viteTransformMiddleware (file:///Users/edpuzn/Desktop/HawAI/frontend/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:62105:24)
+5:27:31 PM [vite] page reload src/main.ts
+5:29:59 PM [vite] page reload src/App.vue
+5:30:34 PM [vite] page reload src/main.ts
+6:09:36 PM [vite] page reload src/main.ts
+6:13:18 PM [vite] page reload src/main.ts
+6:28:48 PM [vite] hmr update /src/views/Chat.vue
+6:29:01 PM [vite] page reload src/main.ts
+6:29:01 PM [vite] page reload src/main.ts
+6:29:28 PM [vite] page reload src/main.ts
+8:31:57 PM [vite] page reload src/main.ts
+8:32:36 PM [vite] hmr update /src/views/Chat.vue
+8:33:19 PM [vite] page reload src/main.ts
+8:34:48 PM [vite] page reload src/main.ts
+9:08:33 PM [vite] hmr update /src/views/Chat.vue
+9:13:01 PM [vite] page reload src/main.ts
+9:13:13 PM [vite] page reload src/App.vue
+9:13:26 PM [vite] page reload src/App.vue
+9:13:46 PM [vite] page reload src/main.ts
+9:16:27 PM [vite] hmr update /src/views/Chat.vue
+9:51:26 PM [vite] page reload src/App.vue

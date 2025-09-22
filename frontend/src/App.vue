@@ -28,19 +28,32 @@
         >
           <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0 links">
             <li class="nav-item">
-              <router-link class="nav-link" to="/">Home</router-link>
+              <router-link class="nav-link" to="/">Sohbet</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/about">About</router-link>
+              <router-link class="nav-link" to="/about">Hakkında</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/developers"
-                >Developers</router-link
+                >Geliştiriciler</router-link
               >
             </li>
           </ul>
 
           <div class="d-flex align-items-center gap-2 right">
+            <!-- Auth controls (koşullu) -->
+            <div class="me-2 d-flex align-items-center gap-2">
+              <template v-if="isAuthed">
+                <span class="user-pill" title="Oturum açık">
+                  <span class="dot ok"></span>{{ shortUserId }}
+                </span>
+                <button class="btn btn-sm btn-outline-danger" type="button" @click="logout">Çıkış</button>
+              </template>
+              <template v-else>
+                <router-link class="btn btn-sm btn-outline-secondary" to="/login">Giriş</router-link>
+                <router-link class="btn btn-sm btn-success" to="/register">Kayıt ol</router-link>
+              </template>
+            </div>
             <button
               class="theme-toggle"
               @click="toggleTheme"
@@ -143,13 +156,21 @@
   </div>
 </template>
 
+<style>
+body { margin: 0; font-family: ui-sans-serif, system-ui; background: var(--bg); color: var(--text-900); }
+a { color: #22c55e; }
+input, button, textarea { font: inherit; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+</style>
+
 <script setup lang="ts">
 import { ref, watch, computed, onMounted, onUnmounted } from "vue";
-import { useStore } from "vuex";
-import { useRoute } from "vue-router";
+import store from "./store";
+import { useRoute, useRouter } from "vue-router";
+import axios from "./utils/axios";
 
-const store = useStore();
 const route = useRoute();
+const router = useRouter();
 
 /* ---- Vuex ---- */
 const health = computed(() => store.state.health.reachable);
@@ -172,6 +193,21 @@ let toastInstance: any = null;
 
 /* ---- Tema ---- */
 const theme = ref<"light" | "dark">("light");
+/* ---- Auth durumu ---- */
+const isAuthed = ref(false);
+const userId = ref<string | null>(null);
+const shortUserId = computed(() => userId.value ? userId.value.slice(-6) : "");
+
+async function refreshAuth(){
+  try{
+    const r = await axios.get('/auth/me');
+    userId.value = r.data?.id || null;
+    isAuthed.value = !!userId.value;
+  }catch{
+    userId.value = null;
+    isAuthed.value = false;
+  }
+}
 function applyTheme(t: "light" | "dark") {
   document.documentElement.setAttribute("data-theme", t);
   localStorage.setItem("theme", t);
@@ -179,6 +215,12 @@ function applyTheme(t: "light" | "dark") {
 function toggleTheme() {
   theme.value = theme.value === "dark" ? "light" : "dark";
   applyTheme(theme.value);
+}
+
+async function logout() {
+  try { await axios.post('/auth/logout'); } catch {}
+  try { router.push('/login'); } catch {}
+  await refreshAuth();
 }
 
 /* ---- NAV: toggle (Bootstrap varsa onunla, yoksa fallback) ---- */
@@ -252,6 +294,8 @@ onMounted(() => {
     theme.value = prefersDark ? "dark" : "light";
   }
   applyTheme(theme.value);
+  // İlk yüklemede auth durumunu kontrol et
+  refreshAuth();
 });
 
 onUnmounted(() => {
@@ -266,6 +310,8 @@ watch(
   () => route.fullPath,
   () => {
     hideNav();
+    // Rota değişiminde auth durumunu yinele (özellikle login/register sonrası)
+    refreshAuth();
   }
 );
 

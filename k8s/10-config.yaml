@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hawai-config
+  namespace: hawai
+data:
+  MONGO_URL: mongodb://mongo:27017
+  MONGO_DB: hawai
+  CORS_ORIGINS: "*"
+  OAI_BASE_URL: http://ollama:11434/v1
+  OAI_MODEL: llava:7b
+  VITE_API_BASE: http://backend:8000
+
+

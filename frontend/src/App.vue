@@ -28,15 +28,42 @@
         >
           <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0 links">
             <li class="nav-item">
-              <router-link class="nav-link" to="/">Sohbet</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/about">Hakkında</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/developers"
-                >Geliştiriciler</router-link
+              <router-link
+                class="nav-link"
+                :class="{
+                  active: $route.path === '/chat' || $route.path === '/',
+                }"
+                to="/chat"
               >
+                Sohbet
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                :class="{ active: $route.path === '/about' }"
+                to="/about"
+              >
+                Hakkında
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                :class="{ active: $route.path === '/ilkyardim' }"
+                to="/ilkyardim"
+              >
+                İlk Yardım
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                :class="{ active: $route.path === '/developers' }"
+                to="/developers"
+              >
+                Geliştiriciler
+              </router-link>
             </li>
           </ul>
 
@@ -47,11 +74,25 @@
                 <span class="user-pill" title="Oturum açık">
                   <span class="dot ok"></span>{{ shortUserId }}
                 </span>
-                <button class="btn btn-sm btn-outline-danger" type="button" @click="logout">Çıkış</button>
+                <button
+                  class="btn btn-sm btn-outline-danger"
+                  type="button"
+                  @click="logout"
+                >
+                  Çıkış
+                </button>
               </template>
               <template v-else>
-                <router-link class="btn btn-sm btn-outline-secondary" to="/login">Giriş</router-link>
-                <router-link class="btn btn-sm btn-success" to="/register">Kayıt ol</router-link>
+                <router-link
+                  class="nav-auth-btn nav-auth-btn--secondary"
+                  to="/login"
+                  >Giriş</router-link
+                >
+                <router-link
+                  class="nav-auth-btn nav-auth-btn--primary"
+                  to="/register"
+                  >Kayıt ol</router-link
+                >
               </template>
             </div>
             <button
@@ -116,7 +157,8 @@
     <!-- SAYFA -->
     <main class="app-main">
       <div class="container py-3">
-        <router-view />
+        <router-view v-if="!bootLoading" />
+        <LoadingScreen v-else />
       </div>
     </main>
 
@@ -157,10 +199,26 @@
 </template>
 
 <style>
-body { margin: 0; font-family: ui-sans-serif, system-ui; background: var(--bg); color: var(--text-900); }
-a { color: #22c55e; }
-input, button, textarea { font: inherit; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui;
+  background: var(--bg);
+  color: var(--text-900);
+}
+a {
+  color: #22c55e;
+}
+input,
+button,
+textarea {
+  font: inherit;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+}
 </style>
 
 <script setup lang="ts">
@@ -168,6 +226,7 @@ import { ref, watch, computed, onMounted, onUnmounted } from "vue";
 import store from "./store";
 import { useRoute, useRouter } from "vue-router";
 import axios from "./utils/axios";
+import LoadingScreen from "./components/LoadingScreen.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -195,18 +254,22 @@ let toastInstance: any = null;
 const theme = ref<"light" | "dark">("light");
 /* ---- Auth durumu ---- */
 const isAuthed = ref(false);
+const bootLoading = ref(true);
 const userId = ref<string | null>(null);
-const shortUserId = computed(() => userId.value ? userId.value.slice(-6) : "");
+const shortUserId = computed(() =>
+  userId.value ? userId.value.slice(-6) : ""
+);
 
-async function refreshAuth(){
-  try{
-    const r = await axios.get('/auth/me');
+async function refreshAuth() {
+  try {
+    const r = await axios.get("/auth/me");
     userId.value = r.data?.id || null;
     isAuthed.value = !!userId.value;
-  }catch{
+  } catch {
     userId.value = null;
     isAuthed.value = false;
   }
+  bootLoading.value = false;
 }
 function applyTheme(t: "light" | "dark") {
   document.documentElement.setAttribute("data-theme", t);
@@ -218,8 +281,12 @@ function toggleTheme() {
 }
 
 async function logout() {
-  try { await axios.post('/auth/logout'); } catch {}
-  try { router.push('/login'); } catch {}
+  try {
+    await axios.post("/auth/logout");
+  } catch {}
+  try {
+    router.push("/login");
+  } catch {}
   await refreshAuth();
 }
 
@@ -396,9 +463,52 @@ const year = new Date().getFullYear();
 .links .nav-link:hover {
   background: var(--brand-50);
 }
+.links .nav-link.active {
+  color: var(--brand-700) !important;
+  background: var(--brand-100);
+}
 .links .router-link-exact-active {
   color: var(--brand-700) !important;
   background: var(--brand-100);
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+  .nav-inner {
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .links .nav-link {
+    padding: 12px 16px;
+    text-align: center;
+  }
+
+  .right {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .nav-auth-btn {
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  .theme-toggle {
+    width: 100%;
+    height: 44px;
+  }
+
+  .status-pill {
+    justify-content: center;
+  }
 }
 
 /* Toggler */
@@ -484,6 +594,42 @@ const year = new Date().getFullYear();
   align-items: center;
   justify-content: center;
   color: var(--text-600);
+}
+
+/* Navigation auth buttons */
+.nav-auth-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.nav-auth-btn--secondary {
+  color: var(--text-900);
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.nav-auth-btn--secondary:hover {
+  background: var(--brand-50);
+  transform: translateY(-1px);
+}
+
+.nav-auth-btn--primary {
+  color: white;
+  background: var(--brand-600);
+  border-color: var(--brand-600);
+}
+
+.nav-auth-btn--primary:hover {
+  background: var(--brand-700);
+  border-color: var(--brand-700);
+  transform: translateY(-1px);
 }
 
 /* Font smoothing */

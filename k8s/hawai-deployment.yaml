@@ -1,0 +1,222 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hawai
+  labels:
+    name: hawai
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hawai-config
+  namespace: hawai
+data:
+  # Backend environment variables
+  MONGO_URL: "mongodb://rwuser:Mu2190541%3F@124.243.175.197:8635,188.239.49.153:8635/test?authSource=admin"
+  MONGO_DB: "hawai"
+  CORS_ORIGINS: "http://hawai-frontend-service:80"
+  JWT_SECRET: "hawai-production-secret-key-2024"
+  JWT_ALG: "HS256"
+  JWT_EXPIRE_MINUTES: "10080"
+  OAI_BASE_URL: "http://hawai-ollama-service:11434/v1"
+  OAI_MODEL: "llava:7b"
+  APP_NAME: "HawAI API"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: hawai-secrets
+  namespace: hawai
+type: Opaque
+data:
+  # Base64 encoded secrets (echo -n "value" | base64)
+  mongo-password: TXVfMjE5MDU0MSUzRg==  # Mu2190541?
+  jwt-secret: aGF3YWktcHJvZHVjdGlvbi1zZWNyZXQta2V5LTIwMjQ=  # hawai-production-secret-key-2024
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hawai-backend
+  namespace: hawai
+  labels:
+    app: hawai-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hawai-backend
+  template:
+    metadata:
+      labels:
+        app: hawai-backend
+    spec:
+      containers:
+      - name: backend
+        image: swr.ap-southeast-3.myhuaweicloud.com/hawai/hawai-backend:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        env:
+        - name: MONGO_URL
+          valueFrom:
+            configMapKeyRef:
+              name: hawai-config
+              key: MONGO_URL
+        - name: MONGO_DB
+          valueFrom:
+            configMapKeyRef:
+              name: hawai-config
+              key: MONGO_DB
+        - name: CORS_ORIGINS
+          valueFrom:
+            configMapKeyRef:
+              name: hawai-config
+              key: CORS_ORIGINS
+        - name: JWT_SECRET
+          valueFrom:
+            configMapKeyRef:
+              name: hawai-config
+              key: JWT_SECRET
+        - name: JWT_ALG
+          valueFrom:
+            configMapKeyRef:
+              name: hawai-config
+              key: JWT_ALG
+        - name: JWT_EXPIRE_MINUTES
+          valueFrom:
+            configMapKeyRef:
+              name: hawai-config
+              key: JWT_EXPIRE_MINUTES
+        - name: OAI_BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: hawai-config
+              key: OAI_BASE_URL
+        - name: OAI_MODEL
+          valueFrom:
+            configMapKeyRef:
+              name: hawai-config
+              key: OAI_MODEL
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: hawai-config
+              key: APP_NAME
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hawai-backend-service
+  namespace: hawai
+spec:
+  selector:
+    app: hawai-backend
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hawai-frontend
+  namespace: hawai
+  labels:
+    app: hawai-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hawai-frontend
+  template:
+    metadata:
+      labels:
+        app: hawai-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: swr.ap-southeast-3.myhuaweicloud.com/hawai/hawai-frontend:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hawai-frontend-service
+  namespace: hawai
+spec:
+  selector:
+    app: hawai-frontend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hawai-ingress
+  namespace: hawai
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - host: hawai.yourdomain.com  # Kendi domain'inizi buraya yazın
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hawai-frontend-service
+            port:
+              number: 80
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: hawai-backend-service
+            port:
+              number: 8000

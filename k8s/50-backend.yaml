@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: hawai-backend:latest
+          image: swr.ap-southeast-3.myhuaweicloud.com/hawai/hawai-backend:cci
           ports:
             - containerPort: 8000
           envFrom:

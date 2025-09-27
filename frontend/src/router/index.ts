@@ -4,26 +4,49 @@ import HomeView from "../views/HomeView.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
-    meta: { title: "HawAI — Home" },
+    redirect: "/chat",
+  },
+  {
+    path: "/chat",
+    name: "chat",
+    component: () => import("../views/Chat.vue"),
+    meta: { title: "HawAI — Sohbet" },
   },
   {
     path: "/about",
     name: "about",
     component: () => import("../views/AboutView.vue"),
-    meta: { title: "HawAI — About" },
+    meta: { title: "HawAI — Hakkında" },
+  },
+  {
+    path: "/ilkyardim",
+    name: "ilkyardim",
+    component: () => import("../views/IlkyardimView.vue"),
+    meta: { title: "HawAI — İlkyardım" },
+  },
+  {
+    path: "/developers",
+    name: "developers",
+    component: () => import("../views/DevelopersView.vue"),
+    meta: { title: "HawAI — Geliştiriciler" },
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("../views/Login.vue"),
+    meta: { title: "HawAI — Giriş" },
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: () => import("../views/Register.vue"),
+    meta: { title: "HawAI — Kayıt" },
   },
   {
     path: "/:pathMatch(.*)*",
     name: "not-found",
     component: () => import("../views/NotFoundView.vue"),
     meta: { title: "Sayfa bulunamadı — HawAI" },
-  },
-  {
-    path: "/developers",
-    name: "Developers",
-    component: () => import("../views/DevelopersView.vue"),
   },
 ];
 

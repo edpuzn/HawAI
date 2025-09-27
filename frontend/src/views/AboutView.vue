@@ -1,47 +1,6 @@
 <!-- src/views/AboutView.vue -->
 <template>
   <div class="about-landing">
-    <!-- ===== HERO ===== -->
-    <section
-      class="hero"
-      ref="heroEl"
-      role="application"
-      aria-label="Sohbet arayüzü"
-    >
-      <p class="welcome">HawAI’ye hoş geldiniz</p>
-      <h1 class="question">Nasıl yardımcı olabilirim?</h1>
-
-      <form
-        class="prompt"
-        :class="{ shake: justShook }"
-        @submit.prevent="submit"
-      >
-        <input
-          ref="inputRef"
-          v-model="query"
-          class="prompt-input"
-          type="text"
-          :placeholder="placeholder"
-          autocomplete="off"
-          spellcheck="false"
-          aria-label="Soru yazın"
-          @keydown.enter.exact.prevent="submit"
-        />
-        <button
-          class="send"
-          type="submit"
-          :disabled="!canSend"
-          :aria-disabled="!canSend"
-          aria-label="Gönder"
-          title="Gönder"
-        >
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-            <path fill="currentColor" d="M2 21l21-9L2 3v7l15 2-15 2z" />
-          </svg>
-        </button>
-      </form>
-    </section>
-
     <!-- ===== HABER DECK ===== -->
     <section class="news-deck" aria-label="Sağlık haberleri" ref="deckEl">
       <div class="news-grid">
@@ -173,6 +132,44 @@
         </ol>
       </div>
     </section>
+
+    <!-- ===== FIXED CHAT BAR ===== -->
+    <div class="fixed-chat-bar">
+      <form class="chat-form" @submit.prevent="handleSubmit">
+        <div class="input-container" :class="{ shake: justShook }">
+          <input
+            ref="inputRef"
+            v-model="query"
+            class="chat-input"
+            type="text"
+            :placeholder="placeholder"
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="HawAI'ye soru sorun"
+            @keydown.enter.exact.prevent="handleSubmit"
+          />
+          <button
+            class="send-btn"
+            type="submit"
+            :disabled="!canSend"
+            :aria-disabled="!canSend"
+            aria-label="Gönder"
+            title="Gönder"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M2 21l21-9L2 3v7l15 2-15 2z"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -186,27 +183,28 @@ import {
   nextTick,
 } from "vue";
 import { useRouter } from "vue-router";
+import axios from "../utils/axios";
 
-/* Görseller */
-import heroA from "@/assets/sembol.jpg";
-import img1 from "@/assets/healt1.jpg";
-import img2 from "@/assets/healt2.jpg";
-import img3 from "@/assets/healt3.jpg";
-import img4 from "@/assets/healt4.jpg";
-
-/* --------- Chat hero state --------- */
+/* --------- Router --------- */
 const router = useRouter();
+
+/* --------- Chat Bar State --------- */
 const query = ref("");
 const canSend = computed(() => query.value.trim().length > 0);
+const inputRef = ref<HTMLInputElement | null>(null);
 
 const EXAMPLES = [
   "Günlük su hedefimi nasıl belirlerim?",
   "Baş ağrısı için evde neler yapabilirim?",
   "Uyku kalitesini artırmak için öneriler?",
+  "Stres azaltma teknikleri nelerdir?",
+  "Sağlıklı beslenme önerileri",
+  "Egzersiz programı nasıl oluşturulur?",
 ];
 const exIndex = ref(0);
 const placeholder = computed(() => EXAMPLES[exIndex.value]);
 let rotator: number | null = null;
+
 function startRotate() {
   stopRotate();
   rotator = window.setInterval(() => {
@@ -214,12 +212,14 @@ function startRotate() {
       exIndex.value = (exIndex.value + 1) % EXAMPLES.length;
   }, 2800);
 }
+
 function stopRotate() {
   if (rotator) {
     clearInterval(rotator);
     rotator = null;
   }
 }
+
 watch(
   () => query.value,
   (v) => (v.trim() ? stopRotate() : startRotate()),
@@ -232,14 +232,43 @@ function shakeOnce() {
   requestAnimationFrame(() => (justShook.value = true));
   setTimeout(() => (justShook.value = false), 350);
 }
-function submit() {
-  const text = query.value.trim();
-  if (!text) {
+
+async function checkAuth() {
+  try {
+    await axios.get("/auth/me");
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function handleSubmit() {
+  if (!canSend.value) {
     shakeOnce();
     return;
   }
-  router.push({ path: "/", query: { q: text, from: "about" } });
+
+  const isAuthenticated = await checkAuth();
+
+  if (!isAuthenticated) {
+    alert("Bu özelliği kullanmak için lütfen önce giriş yapınız!");
+    router.push("/login");
+    return;
+  }
+
+  // Login ise sohbet sayfasına yönlendir
+  router.push({
+    path: "/chat",
+    query: { q: query.value.trim() },
+  });
 }
+
+/* Görseller */
+import heroA from "@/assets/sembol.jpg";
+import img1 from "@/assets/healt1.jpg";
+import img2 from "@/assets/healt2.jpg";
+import img3 from "@/assets/healt3.jpg";
+import img4 from "@/assets/healt4.jpg";
 
 /* --------- Sağ sütun: healt1–4 --------- */
 const sideCards = [
@@ -258,7 +287,6 @@ const sideCards = [
 ];
 
 /* --------- Scroll yönlendirme + snap --------- */
-const heroEl = ref<HTMLElement | null>(null);
 const deckEl = ref<HTMLElement | null>(null);
 const railEl = ref<HTMLElement | null>(null);
 const roadmapEl = ref<HTMLElement | null>(null);
@@ -338,7 +366,8 @@ function onWheel(e: WheelEvent) {
     } else {
       e.preventDefault();
       lockedToDeck = false;
-      scrollToEl(heroEl.value);
+      // Scroll to top of page
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }
 }
@@ -346,13 +375,13 @@ function onWheel(e: WheelEvent) {
 /* Mount / Unmount */
 onMounted(() => {
   window.addEventListener("wheel", onWheel, { passive: false });
-  startRotate();
   document.addEventListener("keydown", onKey);
+  startRotate();
 });
 onBeforeUnmount(() => {
   window.removeEventListener("wheel", onWheel as any);
-  stopRotate();
   document.removeEventListener("keydown", onKey);
+  stopRotate();
 });
 
 /* --------- SDG 3 içerik + 2 şerit --------- */
@@ -488,118 +517,13 @@ function onKey(e: KeyboardEvent) {
   background: var(--page-bg);
 }
 
-/* ===== HERO ===== */
-.hero {
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  margin-top: -1px;
-  min-height: calc(100vh - 84px);
-  padding: clamp(24px, 5vw, 60px) clamp(12px, 6vw, 72px);
-  display: grid;
-  place-items: center;
-  gap: clamp(10px, 2.4vw, 18px);
-  background: radial-gradient(
-      760px 420px at 12% 14%,
-      rgba(16, 185, 129, 0.1),
-      transparent 60%
-    ),
-    var(--surface);
-}
-.welcome {
-  margin: 0;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  opacity: 0.92;
-  font-size: clamp(18px, 2.3vw, 32px);
-  text-align: center;
-}
-.question {
-  margin: 0 0 10px;
-  font-weight: 900;
-  line-height: 1.05;
-  text-align: center;
-  font-size: clamp(32px, 6.8vw, 64px);
-}
-
-.prompt {
-  width: min(1600px, 92vw);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  background: color-mix(in oklab, var(--surface), black 8%);
-  border: 1px solid var(--border);
-  border-radius: 26px;
-  padding: 10px;
-  gap: 10px;
-  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--surface), white 6%),
-    0 6px 24px rgba(2, 6, 23, 0.08);
-}
-.prompt-input {
-  width: 100%;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: var(--text-900);
-  padding: 18px 16px 18px 18px;
-  font-size: clamp(16px, 1.7vw, 22px);
-}
-.prompt-input::placeholder {
-  color: color-mix(in oklab, var(--text-900), transparent 45%);
-}
-.send {
-  width: 54px;
-  height: 54px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  display: grid;
-  place-items: center;
-  background: linear-gradient(180deg, var(--brand-400), var(--brand-600));
-  color: #fff;
-  transition: transform 0.12s ease, filter 0.12s ease, opacity 0.12s ease,
-    box-shadow 0.12s ease;
-  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
-}
-.send:hover {
-  transform: scale(1.04);
-  filter: saturate(110%);
-}
-.send:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-  filter: grayscale(0.15);
-  box-shadow: none;
-}
-
-@keyframes k-shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-5px);
-  }
-  40% {
-    transform: translateX(5px);
-  }
-  60% {
-    transform: translateX(-3px);
-  }
-  80% {
-    transform: translateX(3px);
-  }
-}
-.prompt.shake {
-  animation: k-shake 0.32s ease;
-}
-
 /* ===== NEWS DECK ===== */
 .news-deck {
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
   padding: clamp(16px, 4vw, 28px);
-  padding-top: 0;
+  padding-top: clamp(16px, 4vw, 28px);
 }
 .news-grid {
   display: grid;
@@ -849,6 +773,26 @@ function onKey(e: KeyboardEvent) {
 .container {
   width: min(1200px, 92vw);
   margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
+}
+
+/* Mobile container adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 clamp(12px, 3vw, 20px);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 8px;
+  }
 }
 .section-title {
   font-weight: 900;
@@ -895,28 +839,469 @@ function onKey(e: KeyboardEvent) {
   color: var(--text-700);
 }
 
+/* ===== FIXED CHAT BAR ===== */
+.fixed-chat-bar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: min(500px, 85vw);
+  max-width: 85vw;
+}
+
+.chat-form {
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.input-container:focus-within {
+  border-color: var(--brand-500);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1), 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.chat-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-900);
+  font-size: 15px;
+  padding: 14px 18px;
+  outline: none;
+  border-radius: 50px;
+}
+
+.chat-input::placeholder {
+  color: var(--text-600);
+}
+
+.send-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--brand-600);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 4px;
+}
+
+.send-btn:hover:not(:disabled) {
+  background: var(--brand-700);
+  transform: scale(1.05);
+}
+
+.send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.send-btn svg {
+  flex-shrink: 0;
+}
+
+/* Shake animation */
+@keyframes k-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+.input-container.shake {
+  animation: k-shake 0.32s ease;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+
+/* Large tablets and small desktops */
 @media (max-width: 992px) {
   .news-grid {
     grid-template-columns: 1fr;
+    gap: clamp(12px, 2vw, 16px);
   }
+
   .side-rail {
     position: static;
     max-height: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(12px, 2vw, 16px);
   }
+
+  .side-card {
+    min-height: clamp(200px, 35vh, 280px);
+  }
+
   .steps {
     grid-template-columns: 1fr 1fr;
+    gap: clamp(16px, 3vw, 24px);
+  }
+
+  .sdg-ticker {
+    padding: clamp(12px, 2vw, 16px);
+  }
+
+  .sdg-lane {
+    margin-bottom: clamp(8px, 1.5vw, 12px);
+  }
+
+  .sdg-chip {
+    padding: 8px 12px;
+    font-size: 13px;
+    margin-right: 8px;
   }
 }
-@media (max-width: 640px) {
+
+/* Tablets */
+@media (max-width: 768px) {
+  .news-deck {
+    padding: clamp(12px, 3vw, 20px);
+  }
+
+  .lead-carousel {
+    height: clamp(240px, 50vw, 400px);
+    border-radius: 12px;
+  }
+
+  .lead-cap {
+    left: clamp(12px, 2.5vw, 20px);
+    right: clamp(12px, 4vw, 160px);
+    bottom: clamp(12px, 3vw, 24px);
+  }
+
+  .lead-title {
+    font-size: clamp(24px, 6vw, 48px);
+    margin: 8px 0 4px;
+  }
+
+  .lead-desc {
+    font-size: clamp(13px, 2vw, 16px);
+  }
+
+  .kicker {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .side-card {
+    min-height: clamp(180px, 30vh, 240px);
+    border-radius: 12px;
+  }
+
+  .side-cap {
+    padding: clamp(12px, 2.5vw, 16px);
+  }
+
+  .side-title {
+    font-size: clamp(14px, 2.2vw, 18px);
+  }
+
+  .section-title {
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: clamp(16px, 3vw, 24px);
+  }
+
   .steps {
     grid-template-columns: 1fr;
+    gap: clamp(12px, 2.5vw, 20px);
   }
-  .send {
-    width: 48px;
-    height: 48px;
+
+  .steps li {
+    padding: clamp(16px, 3vw, 24px);
+    border-radius: 12px;
   }
-  .prompt-input {
-    padding: 14px 12px 14px 14px;
+
+  .steps h3 {
+    font-size: clamp(16px, 3vw, 20px);
+    margin-bottom: 8px;
+  }
+
+  .steps p {
+    font-size: clamp(13px, 2vw, 15px);
+  }
+
+  .modal-card {
+    margin: 20px;
+    max-width: calc(100vw - 40px);
+    max-height: calc(100vh - 40px);
+  }
+
+  .modal-head {
+    padding: 16px;
+  }
+
+  .modal-title {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .modal-list {
+    padding: 16px;
+  }
+
+  .modal-list li {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .modal-foot {
+    padding: 16px;
+  }
+
+  .modal-ok {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .fixed-chat-bar {
+    bottom: 20px;
+    width: 90vw;
+    max-width: 90vw;
+  }
+
+  .chat-input {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .send-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 640px) {
+  .news-deck {
+    padding: 12px;
+  }
+
+  .lead-carousel {
+    height: clamp(200px, 60vw, 300px);
+    border-radius: 8px;
+  }
+
+  .lead-cap {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .lead-title {
+    font-size: clamp(20px, 8vw, 36px);
+    margin: 6px 0 4px;
+  }
+
+  .lead-desc {
+    font-size: clamp(12px, 3vw, 14px);
+  }
+
+  .kicker {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  .side-rail {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .side-card {
+    min-height: clamp(160px, 40vh, 200px);
+    border-radius: 8px;
+  }
+
+  .side-cap {
+    padding: 12px;
+  }
+
+  .side-title {
+    font-size: clamp(13px, 3vw, 16px);
+  }
+
+  .sdg-ticker {
+    padding: 12px 8px;
+  }
+
+  .sdg-chip {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin-right: 6px;
+    border-radius: 6px;
+  }
+
+  .section-title {
+    font-size: clamp(20px, 6vw, 28px);
+    margin-bottom: 16px;
+  }
+
+  .steps {
+    gap: 12px;
+  }
+
+  .steps li {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .steps h3 {
+    font-size: clamp(15px, 4vw, 18px);
+    margin-bottom: 6px;
+  }
+
+  .steps p {
+    font-size: clamp(12px, 2.5vw, 14px);
+  }
+
+  .modal-card {
+    margin: 16px;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 32px);
+    border-radius: 12px;
+  }
+
+  .modal-head {
+    padding: 12px;
+  }
+
+  .modal-title {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .modal-x {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .modal-list {
+    padding: 12px;
+  }
+
+  .modal-list li {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+
+  .modal-foot {
+    padding: 12px;
+  }
+
+  .modal-ok {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .fixed-chat-bar {
+    bottom: 16px;
+    width: 95vw;
+    max-width: 95vw;
+  }
+
+  .chat-input {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .send-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+  .news-deck {
+    padding: 8px;
+  }
+
+  .lead-carousel {
+    height: clamp(180px, 70vw, 250px);
+  }
+
+  .lead-title {
+    font-size: clamp(18px, 9vw, 28px);
+  }
+
+  .lead-desc {
+    font-size: clamp(11px, 3.5vw, 13px);
+  }
+
+  .side-card {
+    min-height: clamp(140px, 45vh, 180px);
+  }
+
+  .side-title {
+    font-size: clamp(12px, 3.5vw, 14px);
+  }
+
+  .sdg-chip {
+    padding: 5px 8px;
+    font-size: 11px;
+    margin-right: 4px;
+  }
+
+  .section-title {
+    font-size: clamp(18px, 7vw, 24px);
+  }
+
+  .steps h3 {
+    font-size: clamp(14px, 4.5vw, 16px);
+  }
+
+  .steps p {
+    font-size: clamp(11px, 3vw, 13px);
+  }
+
+  .modal-card {
+    margin: 12px;
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+  }
+
+  .fixed-chat-bar {
+    bottom: 12px;
+    width: 98vw;
+    max-width: 98vw;
+  }
+
+  .chat-input {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .send-btn {
+    width: 28px;
+    height: 28px;
   }
 }
 :root {

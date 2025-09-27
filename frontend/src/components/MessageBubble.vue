@@ -154,12 +154,14 @@ const hasSources = computed(() => normalizedSources.value.length > 0);
 
 /* Balonlar (artık değişkenleri kullanıyor) */
 .bubble {
-  max-width: 100%;
-  border-radius: 16px;
-  padding: 10px 12px;
+  max-width: min(600px, 85vw);
+  border-radius: 20px;
+  padding: 16px 20px;
   border: 1px solid var(--border);
   background: var(--surface);
   position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
 }
 .row.assistant .bubble {
   background: var(--bubble-ai-bg);
@@ -243,7 +245,7 @@ const hasSources = computed(() => normalizedSources.value.length > 0);
   overflow: hidden;
   border: 1px solid var(--border);
   max-width: 220px;
-  box-shadow: 0 6px 18px rgba(2,6,23,.18);
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.18);
 }
 .mini-image img {
   display: block;

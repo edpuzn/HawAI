@@ -152,10 +152,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-/* Bootstrap'ı burada kullanmaya devam ediyorsan kalsın.
-   Globalde import ettiysen buradaki CSS import'unu kaldırabilirsin. */
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+// Bootstrap removed - using custom responsive design
 
 import edip from "@/assets/team/edip.jpeg";
 import nurgul from "@/assets/team/nurgul.jpeg";
@@ -262,6 +259,57 @@ const selected = ref<Dev | null>(devs[0]);
   .dev-item.right .dev-card {
     grid-column: 1;
     justify-self: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .dev-card {
+    padding: 16px;
+  }
+
+  .dev-card .d-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .avatar-xl {
+    width: 80px;
+    height: 80px;
+    align-self: center;
+  }
+
+  .dev-name {
+    font-size: 20px;
+  }
+
+  .dev-highlights {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-card {
+    padding: 12px;
+  }
+
+  .avatar-xl {
+    width: 64px;
+    height: 64px;
+  }
+
+  .dev-name {
+    font-size: 18px;
+  }
+
+  .role-badge {
+    font-size: 0.85rem;
+    padding: 3px 8px;
+  }
+
+  .dev-highlights li {
+    font-size: 0.8rem;
+    padding: 3px 8px;
   }
 }
 

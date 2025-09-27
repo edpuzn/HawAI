@@ -4,7 +4,7 @@ HawAI, SDG-3 (Sağlık ve Kaliteli Yaşam) odaklı bir yapay zekâ sağlık yard
 
 ## 🏆 Başarılar
 
-- **Huawei Kodlama Maratonu 2024 - 3. Lük** 🥉
+- **Huawei Kodlama Maratonu 2025 - 3. Lük** 🥉
   - Bu proje Huawei Cloud teknolojileri kullanılarak geliştirilmiş ve Huawei Kodlama Maratonu'nda 3. lük ödülü kazanmıştır.
   - Huawei Cloud SWR (Software Repository for Container) ve CCE (Cloud Container Engine) ile deploy edilmiştir.
 

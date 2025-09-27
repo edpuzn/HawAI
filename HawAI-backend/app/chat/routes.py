@@ -101,9 +101,18 @@ async def send_message(body: Dict[str, Any], user_id: str = Depends(require_user
         elif isinstance(im, str) and im:
             out_images.append(im)
 
+    # Kimlik ve üslup için sistem mesajı
+    system_text = (
+        "Adın HawAI. Türkçe konuş. Kısa, net ve nazik cevap ver. "
+        "Kendinden bahsederken: 'Ben HawAI’yim, bir yapay zeka sağlık asistanıyım.' de. "
+        "Ülke/şehir/yaş/kişi kimliği uydurma; insan kimliği olmadığını belirt. "
+        "Gerekirse sınırlılıklarını açıkla. Görsel varsa önce gözlemi kısaca özetle, emin olmadıklarını belirt."
+    )
+
     gen_payload: Dict[str, Any] = {
         "model": settings.OAI_MODEL,
         "prompt": content or "",
+        "system": system_text,
         "stream": False,
         "options": {"num_ctx": 1024}
     }

@@ -25,7 +25,14 @@
       <!-- Görsel önizleme (varsa) -->
       <div v-if="imagePreviewSrc" class="image-preview card">
         <img :src="imagePreviewSrc" alt="seçilen görsel" />
-        <button class="btn btn-sm btn-link remove" type="button" @click="clearImage" aria-label="Görseli kaldır">✕</button>
+        <button
+          class="btn btn-sm btn-link remove"
+          type="button"
+          @click="clearImage"
+          aria-label="Görseli kaldır"
+        >
+          ✕
+        </button>
       </div>
 
       <input
@@ -36,10 +43,34 @@
         @change="onPick"
       />
 
-      <button type="button" class="btn camera-btn" :disabled="disabled || isSending" @click="pick" title="Görsel ekle" aria-label="Görsel ekle">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M5 7h2.2l1.2-2h7.2l1.2 2H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-          <circle cx="12" cy="13" r="3.5" stroke="currentColor" stroke-width="2"/>
+      <button
+        type="button"
+        class="btn camera-btn"
+        :disabled="disabled || isSending"
+        @click="pick"
+        title="Görsel ekle"
+        aria-label="Görsel ekle"
+      >
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 7h2.2l1.2-2h7.2l1.2 2H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linejoin="round"
+          />
+          <circle
+            cx="12"
+            cy="13"
+            r="3.5"
+            stroke="currentColor"
+            stroke-width="2"
+          />
         </svg>
       </button>
 
@@ -95,7 +126,12 @@ const props = withDefaults(
 );
 
 const emit = defineEmits<{
-  (e: "send", message: string, image_base64?: string, image_preview_src?: string): void;
+  (
+    e: "send",
+    message: string,
+    image_base64?: string,
+    image_preview_src?: string
+  ): void;
 }>();
 
 const message = ref<string>("");
@@ -249,14 +285,25 @@ onMounted(() => autoResize());
   gap: 8px;
   align-items: end;
 }
+
+@media (max-width: 480px) {
+  .composer {
+    gap: 6px;
+  }
+}
 .input {
   line-height: 1.55;
   border-radius: 14px;
   padding: 10px 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
   color: var(--text-900);
   border: 1px solid var(--input-border);
-  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.14), inset 0 1px 0 rgba(255,255,255,0.05);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   resize: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease,
     background 0.15s ease, color 0.15s ease;
@@ -267,7 +314,8 @@ onMounted(() => autoResize());
 }
 .input:focus {
   border-color: rgba(34, 197, 94, 0.6);
-  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18), 0 10px 30px rgba(34, 197, 94, 0.12);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18),
+    0 10px 30px rgba(34, 197, 94, 0.12);
 }
 .send-btn {
   display: inline-flex;
@@ -277,7 +325,8 @@ onMounted(() => autoResize());
   height: 44px;
   border-radius: 12px;
   padding: 0;
-  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.35), inset 0 1px 0 rgba(255,255,255,0.12);
+  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
   background: linear-gradient(180deg, #22c55e, #16a34a);
   color: #fff;
   transition: transform 0.12s ease;
@@ -301,7 +350,7 @@ onMounted(() => autoResize());
   display: inline-block;
   max-width: 160px;
   border: 1px solid var(--border);
-  box-shadow: 0 10px 26px rgba(2,6,23,.22);
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.22);
 }
 .image-preview img {
   display: block;

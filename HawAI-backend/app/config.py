@@ -3,7 +3,8 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     APP_NAME: str = "HawAI API"
-    MONGO_URL: str = "mongodb://localhost:27017"
+    # Varsayılanı uzak Mongo kümesine yönlendir
+    MONGO_URL: str = "mongodb://rwuser:Mu2190541%3F@124.243.175.197:8635,188.239.49.153:8635/test?authSource=admin"
     MONGO_DB: str = "hawai"
 
     JWT_SECRET: str = "change-me"

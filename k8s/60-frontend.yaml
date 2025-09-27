@@ -15,25 +15,22 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: your-registry/hawai-frontend:latest
+          image: swr.ap-southeast-3.myhuaweicloud.com/hawai/hawai-frontend:cci
           env:
             - name: VITE_API_BASE
-              valueFrom:
-                configMapKeyRef:
-                  name: hawai-config
-                  key: VITE_API_BASE
+              value: "http://backend:8000"
           ports:
-            - containerPort: 5173
+            - containerPort: 80
           readinessProbe:
             httpGet:
               path: /
-              port: 5173
+              port: 80
             initialDelaySeconds: 5
             periodSeconds: 10
           livenessProbe:
             httpGet:
               path: /
-              port: 5173
+              port: 80
             initialDelaySeconds: 10
             periodSeconds: 20
 ---
@@ -47,8 +44,8 @@ spec:
     app: frontend
   ports:
     - name: http
-      port: 5173
-      targetPort: 5173
+      port: 80
+      targetPort: 80
   type: ClusterIP
 
 

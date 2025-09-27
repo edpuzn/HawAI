@@ -2,6 +2,12 @@
 
 HawAI, SDG-3 (Sağlık ve Kaliteli Yaşam) odaklı bir yapay zekâ sağlık yardımcısıdır. Bu depo; FastAPI backend, Vue 3 + Vite frontend ve (opsiyonel) Dify entegrasyonunu içerir.
 
+## 🏆 Başarılar
+
+- **Huawei Kodlama Maratonu 2024 - 3. Lük** 🥉
+  - Bu proje Huawei Cloud teknolojileri kullanılarak geliştirilmiş ve Huawei Kodlama Maratonu'nda 3. lük ödülü kazanmıştır.
+  - Huawei Cloud SWR (Software Repository for Container) ve CCE (Cloud Container Engine) ile deploy edilmiştir.
+
 ## Dizin Yapısı
 - `HawAI-backend/` — FastAPI tabanlı API, model seed scriptleri ve Makefile hedefi
 - `HawAI-frontend/` — Vue 3 + Vite + TypeScript arayüz
